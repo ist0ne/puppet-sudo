@@ -42,6 +42,12 @@ This module depends on the [puppetlabs-stdlib](https://github.com/puppetlabs/pup
         machine => 'FILESERVERS',
     }
 
+上面命令会添加如下行：
+
+    ADMINS  FILESERVERS=(ALL)       NOPASSWD: ALL
+    User_Alias ADMINS = jsmith, mikem, jobs
+    Host_Alias FILESERVERS = fs1, fs2
+
 删除以上建立的别名只需将ensure都改为absent：
 
     sudo { 'ADMINS':
